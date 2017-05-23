@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @reserva.user %>
+</p>
+
+<p>
+  <strong>Sala:</strong>
+  <%= @reserva.sala %>
+</p>
+
+<p>
+  <strong>Time input:</strong>
+  <%= @reserva.time_input %>
+</p>
+
+<p>
+  <strong>Time output:</strong>
+  <%= @reserva.time_output %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @reserva.date %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @reserva.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_reserva_path(@reserva) %> |
+<%= link_to 'Back', reservas_path %>

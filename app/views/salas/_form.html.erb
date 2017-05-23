@@ -1,0 +1,22 @@
+<%= form_for(sala) do |f| %>
+  <% if sala.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sala.errors.count, "error") %> prohibited this sala from being saved:</h2>
+
+      <ul>
+      <% sala.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
