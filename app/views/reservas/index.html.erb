@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>Student</th>
       <th>Sala</th>
       <th>Time input</th>
       <th>Time output</th>
@@ -18,7 +18,7 @@
   <tbody>
     <% @reservas.each do |reserva| %>
       <tr>
-        <td><%= reserva.user.name %></td>
+        <td><%= reserva.student.name %></td>
         <td><%= reserva.sala.number %></td>
         <td><%= reserva.time_input %></td>
         <td><%= reserva.time_output %></td>

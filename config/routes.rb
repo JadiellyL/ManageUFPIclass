@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :students
   resources :reservas
   resources :salas
   root to: 'visitors#index'

@@ -11,8 +11,8 @@
     </div>
   <% end %>
 
-  <%= f.label :user_id %><br>
-  <%= f.collection_select(:user_id, User.all, :id, :name, {:prompt=>true}, {:class=>'ui search dropdown'}) %>
+  <%= f.label :student_id %><br>
+  <%= f.collection_select(:student_id, Student.all, :id, :name, {:prompt=>true}, {:class=>'ui search dropdown'}) %>
 
   <%= f.label :sala_id %><br>
   <%= f.collection_select(:sala_id, Sala.all, :id, :number, {:prompt=>true}, {:class=>'ui search dropdown'}) %>

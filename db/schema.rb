@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523231736) do
+ActiveRecord::Schema.define(version: 20170524134728) do
 
   create_table "reservas", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "sala_id"
     t.time     "time_input"
     t.time     "time_output"
@@ -21,13 +20,25 @@ ActiveRecord::Schema.define(version: 20170523231736) do
     t.integer  "quantity"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "student_id"
     t.index ["sala_id"], name: "index_reservas_on_sala_id"
-    t.index ["user_id"], name: "index_reservas_on_user_id"
+    t.index ["student_id"], name: "index_reservas_on_student_id"
   end
 
   create_table "salas", force: :cascade do |t|
     t.integer  "number"
     t.boolean  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "matricula"
+    t.string   "name"
+    t.string   "cpf"
+    t.string   "telefone"
+    t.string   "curso"
+    t.string   "sexo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,7 +57,6 @@ ActiveRecord::Schema.define(version: 20170523231736) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "name"
-    t.string   "type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

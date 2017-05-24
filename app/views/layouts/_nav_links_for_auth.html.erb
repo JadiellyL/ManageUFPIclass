@@ -3,6 +3,7 @@
   <li><%= link_to 'Salas', salas_path %></li>
   <li><%= link_to 'Reservas', new_reserva_path %></li>
   <li><%= link_to 'Relatório', reservas_path %></li>
+  <li><%= link_to 'Alunos', students_path %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
   <li><%= link_to 'Sign in', new_user_session_path %></li>
