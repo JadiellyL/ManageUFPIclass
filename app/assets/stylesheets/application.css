@@ -5,6 +5,15 @@
 
 body { padding-top: 46.7px; }
 
+body {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 .main-pusher {
   padding-top: 46.7px;
   padding-left: 250px;
