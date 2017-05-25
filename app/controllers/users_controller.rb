@@ -38,6 +38,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def approve_user
+    @user = User.find_by_id(params[:user_receive])
+    @user.approve = true
+    @user.save
+  end
+
   private
   
   def set_user

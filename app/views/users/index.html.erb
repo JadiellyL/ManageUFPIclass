@@ -1,4 +1,6 @@
 
+<p> Approved? <%= current_user.approve %> </p>
+
 <% if current_user.admin? %>
 
   <h2 class="text-center text-lg text-uppercase my-0"><strong> Usuários </strong></h2>
@@ -157,6 +159,5 @@
 </body>
 
 </html>
-
 
 <% end %>
