@@ -12,7 +12,7 @@
   <body>
     
     <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down">Gerenciador de Salas de Estudo</div>
-    
+
     <nav class="navbar navbar-toggleable-md navbar-light navbar-custom bg-faded py-lg-4">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -60,9 +60,34 @@
         </div>
     </nav>
 
+    <br>
+
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+        <div class="content-wrapper py-3">
+
+          <h2 class="text-center text-lg text-uppercase my-0"><strong> Reservas </strong></h2>
+          <br>
+          <br>
+
+          <div class="container-fluid">
+
+           <%= render 'layouts/messages' %>
+           <%= yield %>
+
+           </div>
+
+        </div>
     </main>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="tether/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <footer class="bg-faded text-center py-5">
+        <div class="container">
+            <p class="m-0">Copyright &copy; 2017</p>
+        </div>
+    </footer>
   </body>
 </html>
