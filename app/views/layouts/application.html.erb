@@ -46,7 +46,7 @@
     
         <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down">Gerenciador de Salas de Estudo</div>
 
-        <% if current_user!=nil and current_user.approve? %>
+        <% if current_user!=nil and current_user.approve? or current_user==nil %>
 
         <nav class="navbar navbar-toggleable-md navbar-light navbar-custom bg-faded py-lg-4">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">

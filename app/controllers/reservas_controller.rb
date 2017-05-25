@@ -1,6 +1,7 @@
 class ReservasController < ApplicationController
   before_action :authenticate_user!
   before_action :set_reserva, only: [:show, :edit, :update, :destroy]
+  before_action :approved
 
   # GET /reservas
   # GET /reservas.json
@@ -50,6 +51,10 @@ class ReservasController < ApplicationController
         format.json { render json: @reserva.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def approved
+    return current_user!=nil and current_user.approve?
   end
 
   # DELETE /reservas/1
