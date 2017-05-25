@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <h2 class="text-center text-lg text-uppercase my-0"><strong> Criar Reserva </strong></h2>
+                  <br>
+                  <br>
+
   <%= f.label :student_id %><br>
   <%= f.collection_select(:student_id, Student.all, :id, :name, {:prompt=>true}, {:class=>'ui search dropdown'}) %>
 
