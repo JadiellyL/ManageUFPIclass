@@ -11,6 +11,8 @@
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
@@ -41,90 +43,94 @@
   </head>
 
   <body>
-
-    <div class="container">
     
         <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down">Gerenciador de Salas de Estudo</div>
 
         <% if current_user!=nil and current_user.approve? or current_user==nil %>
 
-        <nav class="navbar navbar-toggleable-md navbar-light navbar-custom bg-faded py-lg-4">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="container">
-                <a class="navbar-brand text-uppercase text-expanded font-weight-bold hidden-lg-up" href="#">Gerenciador de Salas de Estudo</a>
+            <nav class="navbar navbar-toggleable-md navbar-light navbar-custom bg-faded py-lg-5">
 
-                <br>
-                
-                <div class="collapse navbar-collapse" id="navbarExample">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarExample" aria-controls="navbarExample" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4">
-                                <%= link_to('Home', root_path) %>
-                        </li>
+                        <div class="collapse navbar-collapse" id="navbarExample">
 
-                        <% if current_user!=nil and current_user.admin? %>
+                            <ul class="navbar-nav mx-auto">
+                                
+                                <li class="nav-item px-lg-4">
+                                        <%= link_to('Home', root_path) %>
+                                </li>
 
-                            <li class="nav-item px-lg-4">
-                                <%= link_to('Usuários', users_path) %>
-                            </li>
+                                <% if current_user!=nil and current_user.admin? %>
 
-                        <% end %>
-                        
-                        <% if !user_signed_in? %>
-                            <li class="nav-item px-lg-4">
-                                <%= link_to('Sign Up', new_user_registration_path) %>
-                            </li>
-                        <% else %>
-                            <li class="nav-item px-lg-4">
-                                <%= link_to('Reservas', new_reserva_path) %>
-                            </li>
-                            <li class="nav-item px-lg-4">
-                                <%= link_to('Relatório', reservas_path) %>
-                            </li>
-                            <li class="nav-item px-lg-4">
-                                <%= link_to('Alunos', students_path) %>
-                            </li>
-                            <li class="nav-item px-lg-4">
-                                <%= link_to('Salas', salas_path) %>
-                            </li>
-                        <% end %>
+                                    <li class="nav-item px-lg-4">
+                                        <%= link_to('Usuários', users_path) %>
+                                    </li>
 
-                        <li class="nav-item px-lg-4">
-                            <% if current_user==nil %>
-                                    <%= link_to('Login', user_registration_path) %>
-                            <% else %>
-                                <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>   
-                            <% end %>
-                        </li>
+                                <% end %>
+                                
+                                <% if !user_signed_in? %>
+                                    
+                                    <li class="nav-item px-lg-4">
+                                        <%= link_to('Sign Up', new_user_registration_path) %>
+                                    </li>
 
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                                <% else %>
+
+                                    <li class="nav-item px-lg-4">
+                                        <%= link_to('Reservas', new_reserva_path) %>
+                                    </li>
+                                    <li class="nav-item px-lg-4">
+                                        <%= link_to('Relatório', reservas_path) %>
+                                    </li>
+                                    <li class="nav-item px-lg-4">
+                                        <%= link_to('Alunos', students_path) %>
+                                    </li>
+                                    <li class="nav-item px-lg-4">
+                                        <%= link_to('Salas', salas_path) %>
+                                    </li>
+
+                                <% end %>
+
+                                <li class="nav-item px-lg-4">
+
+                                    <% if current_user==nil %>
+                                            <%= link_to('Login', user_registration_path) %>
+                                    <% else %>
+                                        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>   
+                                    <% end %>
+
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+            </nav>
 
         <% end %>
 
         <br>
 
-        <div class="bg-faded p-4 my-4">
+        <div>
+                <div>
 
-            <main role="main">
+                    <main role="main">
 
-                  <div class="container-fluid">
+                          <div class="container-fluid">
 
-                   <%= render 'layouts/messages' %>
-                   <%= yield %>
+                           <%= render 'layouts/messages' %>
+                           <%= yield %>
 
-                   </div>
+                           </div>
+
+                        </div>
+                        
+                    </main>
 
                 </div>
-            </main>
-
         </div>
-
-    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -136,5 +142,7 @@
             <p class="m-0">Copyright &copy; 2017</p>
         </div>
     </footer>
+
   </body>
+
 </html>
