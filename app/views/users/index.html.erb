@@ -1,4 +1,6 @@
 
+ <% if current_user.admin? %>
+
  <% if current_user!=nil and current_user.approve? %>
 
     <% if current_user.admin? %>
@@ -19,7 +21,7 @@
                   <tbody>
                     <% @users.each do |user| %>
                       <tr>
-                        <% if !(user.id==current_user.id) %>
+                        <% if !(user.email==current_user.email) %>
                           <%= render user %>
                         <% end %>
                       </tr>
@@ -166,5 +168,32 @@
 <% else %>
 
 <p> Você não está aprovado para usar o sistema! &nbsp;&nbsp; <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </p> 
+
+<% end %>
+
+<% else %>
+
+    <div>
+
+            <main role="main">
+
+                              <div class="container-fluid">
+
+                                            <div class="bg-faded p-4 my-4">
+                                            <div class="text-center mt-4">
+
+                                        <h2> Seja Bem-Vindo Técnico! </h2>
+
+                                        </div>
+
+                                   </div>
+
+                               </div>
+
+                            </div>
+                            
+                        </main>
+
+                    </div>
 
 <% end %>

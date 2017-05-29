@@ -17,29 +17,38 @@
 
   <%= f.label :student_id %><br>
   <%= f.collection_select(:student_id, Student.all, :id, :name, {:prompt=>true}, {:class=>'ui search dropdown'}) %>
+  <br>
+  <br>
 
   <%= f.label :sala_id %><br>
   <%= f.collection_select(:sala_id, Sala.all, :id, :number, {:prompt=>true}, {:class=>'ui search dropdown'}) %>
+  <br>
+  <br>
+  <br>
 
   <div class="field">
     <%= f.label :time_input %>
     <%= f.time_select :time_input %>
   </div>
+  <br>
 
   <div class="field">
     <%= f.label :time_output %>
     <%= f.time_select :time_output %>
   </div>
+  <br>
 
   <div class="field">
     <%= f.label :date %>
     <%= f.date_select :date %>
   </div>
+  <br>
 
   <div class="field">
     <%= f.label :quantity %>
     <%= f.number_field :quantity %>
   </div>
+  <br>
 
   <div class="actions">
     <%= f.submit %>

@@ -54,7 +54,7 @@ class ReservasController < ApplicationController
   end
 
   def approved
-    return current_user!=nil and current_user.approve?
+    return (current_user!=nil and current_user.approve?)
   end
 
   # DELETE /reservas/1

@@ -46,7 +46,9 @@
     
         <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down">Gerenciador de Salas de Estudo</div>
 
-        <% if current_user!=nil and current_user.approve? or current_user==nil %>
+        <% if (current_user!=nil and current_user.approve?) or current_user==nil %>
+
+            <p> Rodrigo </p>
 
             <nav class="navbar navbar-toggleable-md navbar-light navbar-custom bg-faded py-lg-5">
 
@@ -113,24 +115,54 @@
 
         <br>
 
-        <div>
-                <div>
+            <div>
+                    <div>
 
-                    <main role="main">
+                        <main role="main">
 
-                          <div class="container-fluid">
+                              <div class="container-fluid">
 
-                           <%= render 'layouts/messages' %>
-                           <%= yield %>
+                                    <% if current_user!=nil and current_user.approve? %>
 
-                           </div>
+                                        <% if !(current_page?(root_url)) %>
+                                            <div class="bg-faded p-4 my-4">
+                                            <div class="text-center mt-4">
+                                        <% end %>
 
-                        </div>
-                        
-                    </main>
+                                           <%= render 'layouts/messages' %>
+                                           <%= yield %>
 
-                </div>
-        </div>
+                                    <% elsif current_user!=nil and !current_user.approve? %>
+
+                                        <div class="bg-faded p-4 my-4">
+                                            <div class="text-center mt-4">
+
+                                        <p> Você não está aprovado para usar o sistema! &nbsp;&nbsp; <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  </p>            
+
+                                    <% else %>
+
+                                        <% if !(current_page?(root_url)) %>
+                                            <div class="bg-faded p-4 my-4">
+                                            <div class="text-center mt-4">
+                                        <% end %>
+
+                                           <%= render 'layouts/messages' %>
+                                           <%= yield %>
+
+                                    <% end %>
+
+                                        </div>
+
+                                   </div>
+
+                               </div>
+
+                            </div>
+                            
+                        </main>
+
+                    </div>
+            </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
