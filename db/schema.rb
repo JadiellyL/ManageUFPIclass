@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170525203120) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "name"
+    t.string   "type"
     t.boolean  "admin"
     t.boolean  "approve",                default: false
     t.index ["email"], name: "index_users_on_email", unique: true

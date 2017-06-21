@@ -26,9 +26,9 @@
         <td><%= student.telefone %></td>
         <td><%= student.curso %></td>
         <td><%= student.sexo %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', student %></td>
+        <td><%= link_to 'Editar', edit_student_path(student) %></td>
+        <td><%= link_to 'Excluir', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'Novo Estudante', new_student_path %>

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Usuario:</strong>
   <%= @reserva.student.name %>
 </p>
 
@@ -11,24 +11,24 @@
 </p>
 
 <p>
-  <strong>Time input:</strong>
+  <strong>Hora Entrada:</strong>
   <%= @reserva.time_input %>
 </p>
 
 <p>
-  <strong>Time output:</strong>
+  <strong>Hora Saída:</strong>
   <%= @reserva.time_output %>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>Data:</strong>
   <%= @reserva.date %>
 </p>
 
 <p>
-  <strong>Quantity:</strong>
+  <strong>Quantidade:</strong>
   <%= @reserva.quantity %>
 </p>
 
-<%= link_to 'Edit', edit_reserva_path(@reserva) %> |
-<%= link_to 'Back', reservas_path %>
+<%= link_to 'Editar', edit_reserva_path(@reserva) %> |
+<%= link_to 'Voltar', reservas_path %>

@@ -1,6 +1,27 @@
 
-<td><%= link_to user.name, user %></td> 
-<td><%= link_to user.email, user %></td>
+  <div class="container-fluid">
+          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><%= link_to user.name, user %></th> 
+        <th><%= link_to user.email, user %></th>
+ 		<th><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+		<th><%= link_to 'Aprovar', approve_user_path(user_receive: user.id), method: :approve_user %></th>
+      </tr>
+    
+    </tbody>
+  </table>
+</div>
+    
+  
 
-<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<td><%= link_to 'Approve', approve_user_path(user_receive: user.id), method: :approve_user %></td>
+
+
+
