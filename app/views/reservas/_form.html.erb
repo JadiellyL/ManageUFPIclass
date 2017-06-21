@@ -16,12 +16,12 @@
                   <br>
 
   <%= f.label :student_id %><br>
-  <%= f.collection_select(:student_id, Student.all, :id, :name, {:prompt=>true}, {:class=>'ui search dropdown'}) %>
+  <%= f.collection_select(:student_id, Student.all, :id, :name, {:prompt=>true}, {:class=>'Colocar classe CSS'}) %>
   <br>
   <br>
 
   <%= f.label :sala_id %><br>
-  <%= f.collection_select(:sala_id, Sala.all, :id, :number, {:prompt=>true}, {:class=>'ui search dropdown'}) %>
+  <%= f.collection_select(:sala_id, Sala.all, :id, :number, {:prompt=>true}, {:class=>'Colocar classe CSS'}) %>
   <br>
   <br>
   <br>
@@ -47,6 +47,7 @@
   <div class="field">
     <%= f.label :quantity %>
     <%= f.number_field :quantity %>
+    
   </div>
   <br>
 

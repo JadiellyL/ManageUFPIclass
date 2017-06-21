@@ -4,9 +4,8 @@
           <br>
           <br>
 
-          <div class="container-fluid">
-
-          <table>
+         <div class="container">
+          <table class="table">
           <thead>
             <tr>
               <th>Number</th>
@@ -20,17 +19,17 @@
                 <tr>
                   <td><%= sala.number %></td>
                   <td><%= sala.status %></td>
-                  <td><%= link_to 'Show', sala %></td>
-                  <td><%= link_to 'Edit', edit_sala_path(sala) %></td>
-                  <td><%= link_to 'Destroy', sala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Mostrar', sala %></td>
+                  <td><%= link_to 'Editar', edit_sala_path(sala) %></td>
+                  <td><%= link_to 'Excluir', sala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 </tr>
               <% end %>
           </tbody>
 
           </table>
 
-        </div>
-
+        
 <br>
 
-<%= link_to 'New Sala', new_sala_path %>
+<button><%= link_to 'Nova Sala', new_sala_path %></button>
+</div>

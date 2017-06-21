@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Gerenciador Sala" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Gerenciador Sala" %>">
@@ -38,6 +39,16 @@
     .carousel-item-prev {
         display: block;
     }
+
+     body {
+            font-family: "Open Sans", Helvetica, Arial, sans-serif;
+            background: url('/img/bg.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+
     </style>
 
   </head>
@@ -45,6 +56,8 @@
   <body>
     
         <div class="tagline-upper text-center text-heading text-shadow text-white mt-4 hidden-md-down">Gerenciador de Salas de Estudo</div>
+
+        <br>
 
         <% if (current_user!=nil and current_user.approve?) or current_user==nil %>
 
@@ -65,7 +78,9 @@
                                 <% if current_user!=nil and current_user.admin? %>
 
                                     <li class="nav-item px-lg-4">
+
                                         <%= link_to('Usuários', users_path) %>
+
                                     </li>
 
                                 <% end %>
@@ -73,7 +88,7 @@
                                 <% if !user_signed_in? %>
                                     
                                     <li class="nav-item px-lg-4">
-                                        <%= link_to('Sign Up', new_user_registration_path) %>
+                                        <%= link_to('Cadastrar', new_user_registration_path) %>
                                     </li>
 
                                 <% else %>
@@ -91,14 +106,24 @@
                                         <%= link_to('Salas', salas_path) %>
                                     </li>
 
+                                    <% if current_user!=nil and current_user.admin? %>
+
+                                        <li class="nav-item px-lg-4">
+
+                                            <%= link_to('Cursos', courses_path) %>
+
+                                        </li>
+
+                                    <% end %>
+
                                 <% end %>
 
                                 <li class="nav-item px-lg-4">
 
                                     <% if current_user==nil %>
-                                            <%= link_to('Login', user_registration_path) %>
+                                            <%= link_to('Entrar', user_registration_path) %>
                                     <% else %>
-                                        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>   
+                                        <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>   
                                     <% end %>
 
                                 </li>

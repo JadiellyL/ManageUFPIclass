@@ -37,15 +37,17 @@
 
   <div class="field">
     <%= f.label :curso %>
-    <%= f.text_field :curso %>
+    <%= f.collection_select(:curso, Course.all, :id, :name, {:prompt=>true}, {:class=>'Colocar classe CSS'}) %>
   </div>
 
   <div class="field">
-    <%= f.label :sexo %>
-    <%= f.text_field :sexo %>
+  <%= f.label :sexo %>
+    <%= f.select(:sexo, options_for_select(['Masculino', 'Feminino']), {:prompt => 'Selecionar Gênero'}, {:class => ""}) %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
