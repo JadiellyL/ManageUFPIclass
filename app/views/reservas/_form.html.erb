@@ -15,17 +15,15 @@
                   <br>
                   <br>
 
-  <%= f.label :student_id, "Estudante"%><br>
+  <%= f.label :student_id, "Estudante"%>
   <%= f.collection_select(:student_id, Student.all, :id, :name, {:prompt => 'Selecionar Estudante'},{:class=>'Colocar classe CSS'}) %>
-  <br>
-  <br>
 
-  <%= f.label :sala_id, "Sala" %><br>
+  <br>
+  <br>
+  <%= f.label :sala_id, "Sala" %>
   <%= f.collection_select(:sala_id, Sala.all, :id, :number, {:prompt => 'Selecionar Sala'}, {:class=>'Colocar classe CSS'}) %>
   <br>
   <br>
-  <br>
-
   <div class="field">
     <%= f.label :time_input, "Hora de Entrada"%>
     <%= f.time_select :time_input %>
