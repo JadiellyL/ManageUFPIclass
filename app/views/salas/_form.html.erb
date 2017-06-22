@@ -3,7 +3,7 @@
   <% if sala.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(sala.errors.count, "error") %> prohibited this sala from being saved:</h2>
-
+ 
       <ul>
       <% sala.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <h2 class="text-center text-lg text-uppercase my-0"><strong> Nova Sala </strong></h2>
+ <h2 class="text-center text-lg text-uppercase my-0"><strong> Nova Sala </strong></h2>
                   <br>
                   <br>
 
@@ -22,6 +22,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
   </div>
 <% end %>
