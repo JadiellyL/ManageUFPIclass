@@ -12,13 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20170621182616) do
 
-  create_table "courses", force: :cascade do |t|
+  create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "reservas", force: :cascade do |t|
+  create_table "reservas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "sala_id"
     t.time     "time_input"
     t.time     "time_output"
@@ -27,18 +27,18 @@ ActiveRecord::Schema.define(version: 20170621182616) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "student_id"
-    t.index ["sala_id"], name: "index_reservas_on_sala_id"
-    t.index ["student_id"], name: "index_reservas_on_student_id"
+    t.index ["sala_id"], name: "index_reservas_on_sala_id", using: :btree
+    t.index ["student_id"], name: "index_reservas_on_student_id", using: :btree
   end
 
-  create_table "salas", force: :cascade do |t|
+  create_table "salas", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "number"
     t.boolean  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "students", force: :cascade do |t|
+  create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "matricula"
     t.string   "name"
     t.string   "cpf"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20170621182616) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
@@ -65,8 +65,10 @@ ActiveRecord::Schema.define(version: 20170621182616) do
     t.string   "name"
     t.boolean  "admin"
     t.boolean  "approve",                default: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "reservas", "salas"
+  add_foreign_key "reservas", "students"
 end
