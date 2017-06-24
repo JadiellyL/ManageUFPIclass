@@ -28,9 +28,8 @@
                   <td><%= reserva.time_output.strftime('%H:%M') %></td>
                   <td><%= reserva.date %></td>
                   <td><%= reserva.quantity %></td>
-                  <td><%= link_to 'Mostrar', reserva %></td>
-                  <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
-                  <td><%= link_to 'Excluir', reserva, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Mostrar', reserva, :class => 'btn btn-outline-info'%></td>
+                  
                 </tr>
               <% end %>
             </tbody>

@@ -19,9 +19,9 @@
                 <tr>
                   <td><%= sala.number %></td>
                   <td><%= sala.status %></td>
-                  <td><%= link_to 'Mostrar', sala %></td>
-                  <td><%= link_to 'Editar', edit_sala_path(sala) %></td>
-                  <td><%= link_to 'Excluir', sala, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  
+                  <td><%= link_to 'Editar', edit_sala_path(sala), :class => "btn btn-outline-warning"%></td>
+                  <td><%= link_to 'Excluir', sala, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"btn btn-outline-danger" %></td>
                 </tr>
               <% end %>
           </tbody>
@@ -30,6 +30,6 @@
 
         
 <br>
-<%= link_to 'Nova Sala', new_sala_path %>
+<%= link_to 'Nova Sala', new_sala_path, :class => "btn btn-outline-primary"%>
 </div>
 
