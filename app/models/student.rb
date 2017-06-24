@@ -1,3 +1,3 @@
 class Student < ApplicationRecord
-	has_many :reservas
+	has_many :reservas, :dependent => :destroy
 end
