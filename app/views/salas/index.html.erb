@@ -18,23 +18,11 @@
                 
                   <% if sala.status==false %>
 
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                      <div class="card card-inverse card-success o-hidden h-100">
-                      
-                            <span class="float-left"> <%= sala.id %> </span>
-                        </a>
-                      </div>
-                    </div>
+                    <%= link_to "#{sala.id}", sala, :class => "btn btn-outline-info" %>
 
                   <% else %>
 
-                    <div class="col-xl-3 col-sm-6 mb-3">
-                       <div class="card card-inverse card-danger o-hidden h-100">                      
-                        
-                              <span class="float-left"><%= sala.id %></span>
-                          </a>
-                      </div>
-                    </div>
+                    <%= link_to "#{sala.id}", sala, :class => "btn btn-outline-danger" %>
 
                   <% end %>
 
