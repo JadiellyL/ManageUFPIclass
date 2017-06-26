@@ -26,15 +26,16 @@ class ReservasController < ApplicationController
   # POST /reservas
   # POST /reservas.json
   def create
+    
     @reserva = Reserva.new(reserva_params)
 
     @sala = Sala.find_by_id(@reserva.sala_id)
 
     time1 = @reserva.time_output
 
-    time2 = Time.now 
+    time2 = Time.now
 
-    if !(time1.utc.strftime( "%H%M%S%N" ) <= time2.utc.strftime( "%H%M%S%N" ))
+    if (time1.utc.strftime("%H%M%S%N").to_f > time2.utc.strftime("%H%M%S%N").to_f)
 
       @sala.status = true
 
@@ -93,6 +94,6 @@ class ReservasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reserva_params
-      params.require(:reserva).permit(:student_id, :sala_id, :time_input, :time_output, :date, :quantity)
+      params.require(:reserva).permit(:student_id, :sala_id, :time_input, :time_output, :quantity)
     end
 end

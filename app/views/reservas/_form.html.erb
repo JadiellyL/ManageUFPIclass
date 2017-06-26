@@ -29,13 +29,13 @@
 
   <div class="field">
     <%= f.label :time_input, "Hora de Entrada"%>
-    <%= f.time_select :time_input, {:default => {:hour => time.hour, :minute => time.min}} %>
+    <%= f.time_select :time_input, start_hour: time.hour, end_hour: time.hour %>
   </div>
   <br>
 
   <div class="field">
     <%= f.label :time_output, "Hora de Saída"%>
-    <%= f.time_select :time_output, {:default => {:hour => time.hour, :minute => time.min+1}} %>
+    <%= f.time_select :time_output, start_hour: time.hour, end_hour: time.hour+2 %>
 
   </div>
   <br>
