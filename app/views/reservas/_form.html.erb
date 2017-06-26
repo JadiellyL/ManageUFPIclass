@@ -24,15 +24,18 @@
   <%= f.collection_select(:sala_id, Sala.all, :id, :number, {:prompt => 'Selecionar Sala'}, {:class=>'Colocar classe CSS'}) %>
   <br>
   <br>
+
+  <% time = Time.now %>
+
   <div class="field">
     <%= f.label :time_input, "Hora de Entrada"%>
-    <%= f.time_select :time_input %>
+    <%= f.time_select :time_input, {:default => {:hour => time.hour, :minute => time.min}} %>
   </div>
   <br>
 
   <div class="field">
     <%= f.label :time_output, "Hora de Saída"%>
-    <%= f.time_select :time_output%>
+    <%= f.time_select :time_output, {:default => {:hour => time.hour, :minute => time.min+1}} %>
 
   </div>
   <br>

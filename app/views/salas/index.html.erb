@@ -24,17 +24,17 @@
 
                   <% reservas.each do |reserva| %>
 
-                  <% time1 = reserva.time_output %>
+                    <% time1 = reserva.time_output %>
 
-                  <% time2 = Time.now %>
+                    <% time2 = Time.now %>
+                    
+                    <% if !(time1.utc.strftime( "%H%M%S%N" ) <= time2.utc.strftime( "%H%M%S%N" )) %>
 
-                  <% if !(time1.utc.strftime( "%H%M%S%N" ) <= time2.utc.strftime( "%H%M%S%N" )) and reserva.date.year==time2.year %>
+                      <% count=1 %>
 
-                    <% count=1 %>
+                      <% break %>
 
-                    <% break %>
-
-                  <% end %>
+                    <% end %>
 
                   <% end %>
                 

@@ -30,7 +30,19 @@ class ReservasController < ApplicationController
 
     @sala = Sala.find_by_id(@reserva.sala_id)
 
-    @sala.status = true
+    time1 = @reserva.time_output
+
+    time2 = Time.now 
+
+    if !(time1.utc.strftime( "%H%M%S%N" ) <= time2.utc.strftime( "%H%M%S%N" ))
+
+      @sala.status = true
+
+    else
+
+      @sala.status = @sala.status
+
+    end
 
     @sala.save
 
