@@ -15,8 +15,30 @@
 
 
                 <% @salas.each do |sala| %>
+
+                  <% count = 0 %>
+
+                  <% reservas = Reserva.where(sala_id: sala.id) %>
+
+                  <% time_now = Time.now %>
+
+                  <% reservas.each do |reserva| %>
+
+                  <% time1 = reserva.time_output %>
+
+                  <% time2 = Time.now %>
+
+                  <% if !(time1.utc.strftime( "%H%M%S%N" ) <= time2.utc.strftime( "%H%M%S%N" )) and reserva.date.year==time2.year %>
+
+                    <% count=1 %>
+
+                    <% break %>
+
+                  <% end %>
+
+                  <% end %>
                 
-                  <% if sala.status==false %>
+                  <% if count==0 %>
 
                     <%= link_to "#{sala.id}", sala, :class => "btn btn-outline-info" %>
 
@@ -34,3 +56,7 @@
         </div>
 
 <%= link_to 'Nova Sala', new_sala_path, :class => "btn btn-outline-primary"%>
+
+</div>
+
+</div>
