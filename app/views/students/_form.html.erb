@@ -37,7 +37,7 @@
 
   <div class="field">
     <%= f.label :curso %>
-    <%= f.collection_select(:curso, Course.all, :id, :name, {:prompt=>true}, {:class=>'Colocar classe CSS'}) %>
+    <%= f.collection_select(:curso, Course.all, :id, :name, {:prompt => 'Selecionar Curso'}, {:class=>'Colocar classe CSS'}) %>
   </div>
 
   <div class="field">

@@ -23,7 +23,7 @@
               <% @reservas.each do |reserva| %>
 
                 <tr>
-                  <td><%= reserva.student_id %></td>
+                  <td><%= reserva.student.name %></td>
                   <td><%= reserva.sala.number %></td>
                   <td><%= reserva.time_input.strftime('%H:%M') %></td>
                   <td><%= reserva.time_output.strftime('%H:%M') %></td>
