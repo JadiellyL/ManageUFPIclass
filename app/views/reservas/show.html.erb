@@ -12,13 +12,13 @@
 
 <p>
   <strong>Hora Entrada:</strong>
-  <%= @reserva.time_input %>
+  <%= @reserva.time_input.strftime('%H:%M') %>
 
 </p>
 
 <p>
   <strong>Hora Saída:</strong>
-  <%= @reserva.time_output %>
+  <%= @reserva.time_output.strftime('%H:%M') %>
 </p>
 
 <p>
@@ -31,5 +31,4 @@
   <%= @reserva.quantity %>
 </p>
 
-<%= link_to 'Editar', edit_reserva_path(@reserva) %> |
-<%= link_to 'Voltar', reservas_path %>
+<%= link_to 'Voltar', reservas_path, :class => "btn btn-outline-secondary"%>

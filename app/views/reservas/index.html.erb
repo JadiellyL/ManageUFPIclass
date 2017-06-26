@@ -21,6 +21,7 @@
 
             <tbody>
               <% @reservas.each do |reserva| %>
+
                 <tr>
                   <td><%= reserva.student.name %></td>
                   <td><%= reserva.sala.number %></td>
@@ -29,8 +30,7 @@
                   <td><%= reserva.date %></td>
                   <td><%= reserva.quantity %></td>
                   <td><%= link_to 'Mostrar', reserva %></td>
-                  <td><%= link_to 'Editar', edit_reserva_path(reserva) %></td>
-                  <td><%= link_to 'Excluir', reserva, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+             
                 </tr>
               <% end %>
             </tbody>

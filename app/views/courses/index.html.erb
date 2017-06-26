@@ -15,8 +15,9 @@
     <% @courses.each do |course| %>
       <tr>
         <td><%= course.name %></td>
-        <td><%= link_to 'Editar', edit_course_path(course) %></td>
-        <td><%= link_to 'Excluir', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
+        <td><%= link_to 'Editar', edit_course_path(course), :class => "btn btn-outline-warning" %></td>
+        <td><%= link_to 'Excluir', course, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-outline-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,5 +25,5 @@
 
 <br>
 
-<%= link_to 'Novo Curso', new_course_path %>
+<%= link_to 'Novo Curso', new_course_path, :class => "btn btn-outline-primary" %>
 </div>

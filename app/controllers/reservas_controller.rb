@@ -28,6 +28,12 @@ class ReservasController < ApplicationController
   def create
     @reserva = Reserva.new(reserva_params)
 
+    @sala = Sala.find_by_id(@reserva.sala_id)
+
+    @sala.status = true
+
+    @sala.save
+
     respond_to do |format|
       if @reserva.save
         format.html { redirect_to @reserva, notice: 'Reserva was successfully created.' }
