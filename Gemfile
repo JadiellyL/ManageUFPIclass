@@ -7,7 +7,7 @@ gem 'thor', '>=0.19.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
-gem 'whenever', :require => false
+gem 'whenever'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
