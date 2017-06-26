@@ -8,9 +8,11 @@ int main(){
 
 	system("backup perform --trigger gerenciadorSala_development");
 
-	system("git add . && git add --all && git commit -am. && git push -u rodrigo master");
+	printf("Making backup....\n\n");
 
-	sleep(1000);
+	system("cd /home/aluno/backups/gerenciadorSala_development/ && git add . && git add --all && git commit -am. && git push -u rodrigo master");
+
+	sleep(1);
 
 	}
 

@@ -1,3 +1,4 @@
+
 <%= form_for(student) do |f| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
@@ -10,10 +11,6 @@
       </ul>
     </div>
   <% end %>
-
-  <h2 class="text-center text-lg text-uppercase my-0"><strong> Novo Aluno </strong></h2>
-                  <br>
-                  <br>
 
   <div class="field">
     <%= f.label :matricula %>
@@ -47,7 +44,9 @@
      
   <div class="actions">
   
-    <%= f.submit "Cadastrar", :class => "btn btn-outline-primary"%>
+    <%= f.submit "Cadastrar", :class => "btn btn-outline-primary"%> |
+    <%= link_to 'Mostrar', student, :class => "btn btn-outline-info"%> |
+    <%= link_to 'Voltar', students_path, :class => "btn btn-outline-secondary"%>
     
   </div>
   
