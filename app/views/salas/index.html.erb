@@ -39,7 +39,7 @@
                 
                   <% if count==0 %>
 
-                    <%= link_to "#{sala.id}", sala, :class => "btn btn-outline-info" %>
+                    <%= link_to "#{sala.id}", sala, :class => "btn btn-suc\cess" %>
 
                     <% sala.status = false %>
 
@@ -47,7 +47,7 @@
 
                   <% else %>
 
-                    <%= link_to "#{sala.id}", sala, :class => "btn btn-outline-danger" %>
+                    <%= link_to "#{sala.id}", sala, :class => "btn btn-danger" %>
 
                     <% sala.status = true %>
 
