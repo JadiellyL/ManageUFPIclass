@@ -10,9 +10,9 @@ int main(){
 
 	printf("Making backup....\n\n");
 
-	system("cd /home/aluno/backups/gerenciadorSala_development/ && git add . && git add --all && git commit -am. && git push -u rodrigo master");
+	system("cd /home/aluno/backups/gerenciadorSala_development/ && git add . && git add --all && git commit -am. && git push -u jade master");
 
-	sleep(1);
+	sleep(5);
 
 	}
 

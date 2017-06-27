@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
+gem 'pg', group: :production 
+
 ruby '2.3.1'
 gem 'rails', '~> 5.0.2'
 gem 'backup'
 gem 'thor', '>=0.19.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+gem 'mysql2', '>= 0.3.18', '< 0.5' , group: :development
 gem 'whenever'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
