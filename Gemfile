@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'pg', group: :production 
-
+gem 'puma',  group: :production
 ruby '2.3.1'
 gem 'rails', '~> 5.0.2'
 gem 'backup'

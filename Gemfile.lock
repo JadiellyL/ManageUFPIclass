@@ -118,6 +118,7 @@ GEM
     pry-rescue (1.4.5)
       interception (>= 0.5)
       pry
+    puma (3.8.2)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -207,6 +208,7 @@ DEPENDENCIES
   pg
   pry-rails
   pry-rescue
+  puma
   rails (~> 5.0.2)
   rails_layout
   sass-rails (~> 5.0)
